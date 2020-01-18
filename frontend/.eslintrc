@@ -9,7 +9,7 @@
     "semi": ["error", "never"],
     "comma-dangle": ["error", "never"],
     "linebreak-style": ["error", "windows"],
-    "indent": ["error", 4]
+    "indent": ["error", 2]
   },
   "globals": {
     "fetch": false,

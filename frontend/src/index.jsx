@@ -10,21 +10,12 @@ const Weather = () => {
   const baseURL = "http://localhost:9000/api";
 
   const getWeatherFromApi = async city => {
-    if (city) {
-      try {
-        console.log("hello");
-        const response = await fetch(`${baseURL}/weather/${city}`);
-        return response.json();
-      } catch (error) {
-        console.error(error);
-      }
-    } else {
-      try {
-        const response = await fetch(`${baseURL}/weather`);
-        return response.json();
-      } catch (error) {
-        console.error(error);
-      }
+    try {
+      console.log("hello");
+      const response = await fetch(`${baseURL}/weather/${city}`);
+      return response.json();
+    } catch (error) {
+      console.error(error);
     }
 
     return {};
@@ -36,7 +27,7 @@ const Weather = () => {
     setWeather(weather);
     setCity(null);
   };
-  const weatherDiv = weather ? <div /> : <div />;
+  const weatherDiv = weather ? <div>{weather.description}</div> : <div />;
 
   return (
     <div>
