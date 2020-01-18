@@ -3,7 +3,7 @@ services:
   frontend:
     container_name: weather_front
     build: ./frontend
-    image: weather_front:2.0
+    image: weather_front
     ports:
       - "8000:8000"
     volumes:

@@ -6,8 +6,10 @@
     "node": true
   },
   "rules": {
-    "semi": ["error", "always"],
-    "comma-dangle": ["error", "always-multiline"]
+    "semi": ["error", "never"],
+    "comma-dangle": ["error", "never"],
+    "linebreak-style": ["error", "windows"],
+    "indent": ["error", 4]
   },
   "globals": {
     "fetch": false,
