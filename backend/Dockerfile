@@ -1,12 +1,11 @@
 FROM node:7
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package.json /app
+COPY package.json ./
 RUN npm install
 
-COPY . /app
-
+COPY . .
 EXPOSE 9000
 
 CMD ["npm", "start"]
