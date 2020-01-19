@@ -16,7 +16,7 @@ module.exports = {
   },
   devtool: 'eval',
   output: {
-    filename: 'bundle.js',
+    filename: 'index.jsx',
     publicPath: '/',
   },
   module: {
