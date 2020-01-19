@@ -7,7 +7,6 @@ const cors = require('kcors');
 
 const appId = process.env.APPID || 'b9f72310a5156e47ce945312605c37c7';
 const mapURI = process.env.MAP_ENDPOINT || 'http://api.openweathermap.org/data/2.5';
-const targetCity = process.env.TARGET_CITY || 'helsinki';
 
 const port = process.env.PORT || 9000;
 
@@ -34,7 +33,7 @@ router.get('/api/weather/:city', async ctx => {
 
 router.get('/api/weather', async ctx => {
   const weatherData = await fetchWeather();
-  console.log('hello');
+  console.log('hello', appId);
   ctx.type = 'application/json; charset=utf-8';
   ctx.body = weatherData.weather ? weatherData.weather[0] : {};
 });

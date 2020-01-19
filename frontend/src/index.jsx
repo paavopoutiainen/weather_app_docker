@@ -11,7 +11,6 @@ const Weather = () => {
 
   const getWeatherFromApi = async city => {
     try {
-      console.log("hello");
       const response = await fetch(`${baseURL}/weather/${city}`);
       return response.json();
     } catch (error) {
@@ -23,9 +22,10 @@ const Weather = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const weather = await getWeatherFromApi(city);
-    setWeather(weather);
-    setCity(null);
+    const response = await getWeatherFromApi(city);
+
+    setWeather(response);
+    setCity("");
   };
   const weatherDiv = weather ? <div>{weather.description}</div> : <div />;
 
@@ -39,6 +39,7 @@ const Weather = () => {
         Give city:
         <input
           type="text"
+          name="city"
           value={city}
           onChange={e => setCity(e.target.value)}
         />
@@ -48,28 +49,5 @@ const Weather = () => {
     </div>
   );
 };
-
-/* class Weather extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      icon: ""
-    };
-  }
-
-  async componentWillMount() {
-    const weather = await getWeatherFromApi();
-    this.setState({ icon: weather.icon.slice(0, -1) });
-  }
-
-  render() {
-    const { icon } = this.state;
-
-    return (
-      <div className="icon">{icon && <img src={`/img/${icon}.svg`} />}</div>
-    );
-  }
-} */
 
 ReactDOM.render(<Weather />, document.getElementById("app"));
