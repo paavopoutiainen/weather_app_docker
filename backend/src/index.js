@@ -1,11 +1,15 @@
 const debug = require('debug')('weathermap');
 
+
+require("dotenv").config()
+
+
 const Koa = require('koa');
 const router = require('koa-router')();
 const fetch = require('node-fetch');
 const cors = require('kcors');
 
-const appId = process.env.APPID || 'd0dc8920b6a818287306593582bf3b8d';
+const appId = process.env.APPID;
 const mapURI = process.env.MAP_ENDPOINT || 'http://api.openweathermap.org/data/2.5';
 
 const port = process.env.PORT || 9000;

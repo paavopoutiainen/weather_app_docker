@@ -32,7 +32,7 @@ const Weather = () => {
   return (
     <div>
       <div>
-        <h2>Weather app</h2>
+        <h2>Weather appppppp</h2>
         <p>Type in the ciy of which weather you'd like to know</p>
       </div>
       <form onSubmit={e => handleSubmit(e)}>

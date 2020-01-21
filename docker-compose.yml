@@ -3,7 +3,7 @@ services:
   frontend:
     container_name: weather_front
     build: ./frontend
-    image: weather_front
+    image: weather-app-front:2.1
     ports:
       - "8000:8000"
     volumes:
@@ -11,7 +11,7 @@ services:
   backend:
     container_name: weather_back
     build: ./backend
-    image: weather_back
+    image: weather-app-back:2.1
     ports:
       - "9000:9000"
     volumes:
