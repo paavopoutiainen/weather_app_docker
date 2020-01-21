@@ -10,9 +10,7 @@ services:
       - ./frontend/src:/usr/src/app/src
   backend:
     container_name: weather_back
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    build: ./backend
     image: weather_back
     ports:
       - "9000:9000"
